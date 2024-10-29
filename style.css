@@ -39,7 +39,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #0077cc;
+    background-color: #013220;
     border-radius: 5px;
 }
 
@@ -69,6 +69,7 @@ section {
 /* Bio Comics Section */
 #bio-comics {
     padding: 40px 20px;
+    background-color: #faf8f5; /* Light beige background */
 }
 
 #bio-comics h2 {
@@ -77,8 +78,10 @@ section {
     margin-bottom: 20px;
 }
 
+
 /* Comic Item Container */
 .comic-item {
+    background-color:white;
     display: flex;
     align-items: center;
     margin: 20px auto;
@@ -108,7 +111,7 @@ section {
 
 .comic-content h3 {
     font-size: 1.5em;
-    color: #0077cc;
+    color: #013220;
     margin: 0 0 10px;
 }
 
@@ -120,7 +123,7 @@ section {
 
 .comic-content button {
     padding: 8px 12px;
-    background-color: #0077cc;
+    background-color: #013220;
     color: white;
     border: none;
     border-radius: 5px;
@@ -162,13 +165,11 @@ section {
     margin: 0 auto;
 }
 
-
 /* Slides Wrapper */
 .slides-wrapper {
     display: flex; /* Align images in a row */
     transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
 }
-
 
 .photography-slideshow .slides-wrapper {
     will-change: transform; /* Optimize for smoother transitions */
@@ -181,17 +182,15 @@ section {
     object-fit: cover;
 }
 
-
 .slideshow-image.active {
     opacity: 1; /* Show the active image */
 }
-
 
 .project button {
     margin-top: 10px;
     padding: 8px 12px;
     font-size: 14px;
-    background-color: #0077cc;
+    background-color: #013220;
     color: white;
     border: none;
     border-radius: 5px;
@@ -215,7 +214,7 @@ section {
 .view-portfolio-button {
     padding: 8px 12px;
     font-size: 14px;
-    background-color: #0077cc;
+    background-color: #013220;
     color: white;
     border: none;
     border-radius: 5px;
@@ -227,8 +226,6 @@ section {
 .view-portfolio-button:hover {
     background-color: #ff6347;
 }
-
-
 
 /* Larger Modal Styling */
 .modal {
@@ -361,7 +358,7 @@ section {
 /* Project Title */
 .project-title {
     font-size: 1.2em;
-    color: #0077cc;
+    color: #013220;
     margin: 0;
 }
 
@@ -376,7 +373,7 @@ section {
 .project button {
     padding: 8px 12px;
     font-size: 14px;
-    background-color: #0077cc;
+    background-color: #013220;
     color: white;
     border: none;
     border-radius: 5px;
@@ -387,7 +384,6 @@ section {
 .project button:hover {
     background-color: #ff6347;
 }
-
 
 /* Photography Section Specific Styles */
 .photography-section {
@@ -401,6 +397,7 @@ section {
     color: #333;
     margin-bottom: 20px;
 }
+
 
 /* Photography Grid */
 .photography-grid {
@@ -433,7 +430,7 @@ section {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #0077cc;
+    background-color: #013220;
     color: white;
     border: none;
     cursor: pointer;
@@ -443,7 +440,6 @@ section {
 .photography-project button:hover {
     background-color: #ff6347;
 }
-
 
 /* Modal for Photography Slideshow */
 .photography-modal {
