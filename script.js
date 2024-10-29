@@ -61,29 +61,25 @@ function closePortfolio() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth Scrolling for Header Links
+    // Smooth scrolling for header links
     const navLinks = document.querySelectorAll("header nav a");
 
     navLinks.forEach(link => {
         link.addEventListener("click", function (e) {
-            e.preventDefault(); // Prevent default jump to section
+            e.preventDefault();
 
             const targetId = this.getAttribute("href").substring(1);
             const targetSection = document.getElementById(targetId);
 
-            // Calculate the top position of the target section
             const targetPosition = targetSection.offsetTop;
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
-            const duration = 1000; // Duration in milliseconds (adjust for speed)
+            const duration = 1000;
             let start = null;
 
-            // Animation function for scrolling
             function step(timestamp) {
                 if (!start) start = timestamp;
                 const progress = timestamp - start;
-
-                // Ease-in-out function for smoother effect
                 const ease = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
                 const scrollAmount = ease(progress / duration) * distance + startPosition;
 
@@ -92,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (progress < duration) {
                     window.requestAnimationFrame(step);
                 } else {
-                    window.scrollTo(0, targetPosition); // Ensure exact positioning
+                    window.scrollTo(0, targetPosition);
                 }
             }
 
@@ -100,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Slideshow functionality
+    // General Slideshow functionality with seamless wrapping
     const slideshows = document.querySelectorAll(".slideshow-container");
 
     slideshows.forEach(slideshow => {
@@ -109,69 +105,117 @@ document.addEventListener("DOMContentLoaded", function () {
         const slidesWrapper = slideshow.querySelector(".slides-wrapper");
         const totalSlides = images.length;
 
-        // Set the width of the slides-wrapper to fit all images side-by-side
         slidesWrapper.style.width = `${100 * totalSlides}%`;
-
         images.forEach(image => {
-            image.style.width = `${100 / totalSlides}%`; // Equal width for each image
+            image.style.width = `${100 / totalSlides}%`;
         });
 
         function showSlide(index) {
             const offset = -index * 100 / totalSlides;
+            slidesWrapper.style.transition = "transform 0.5s ease-in-out";
             slidesWrapper.style.transform = `translateX(${offset}%)`;
+            currentSlide = index;
         }
 
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            } else {
+                showSlide(0); // Wrap to the first slide
+            }
         }
 
         function previousSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            } else {
+                showSlide(totalSlides - 1); // Wrap to the last slide
+            }
         }
 
-        // Add event listeners to next and prev buttons
         slideshow.querySelector(".next").addEventListener("click", () => {
             clearInterval(autoplay);
             nextSlide();
-            autoplay = setInterval(nextSlide, 3000); // Restart autoplay
+            autoplay = setInterval(nextSlide, 3000);
         });
 
         slideshow.querySelector(".prev").addEventListener("click", () => {
             clearInterval(autoplay);
             previousSlide();
-            autoplay = setInterval(nextSlide, 3000); // Restart autoplay
+            autoplay = setInterval(nextSlide, 3000);
         });
 
-        // Autoplay the slideshow every 3 seconds
         let autoplay = setInterval(nextSlide, 3000);
     });
 
-    // Open Portfolio PDF in Modal with Larger Size
+    // Independent Photography Slideshow functionality
+    function initializePhotographySlideshow(slideshowContainer) {
+        let currentPhoto = 0;
+        const photoWrapper = slideshowContainer.querySelector(".slides-wrapper");
+        const photoImages = Array.from(slideshowContainer.querySelectorAll(".slideshow-image"));
+        const totalPhotos = photoImages.length;
+
+        photoWrapper.style.width = `${100 * totalPhotos}%`;
+        photoImages.forEach(image => image.style.width = `100%`);
+
+        function showPhoto(index) {
+            const offset = -index * 100;
+            photoWrapper.style.transition = "transform 0.5s ease-in-out";
+            photoWrapper.style.transform = `translateX(${offset}%)`;
+            currentPhoto = index;
+        }
+
+        function nextPhoto() {
+            showPhoto((currentPhoto + 1) % totalPhotos);
+        }
+
+        function previousPhoto() {
+            showPhoto((currentPhoto - 1 + totalPhotos) % totalPhotos);
+        }
+
+        slideshowContainer.querySelector(".next").addEventListener("click", () => {
+            clearInterval(photoAutoplay);
+            nextPhoto();
+            photoAutoplay = setInterval(nextPhoto, 3000);
+        });
+
+        slideshowContainer.querySelector(".prev").addEventListener("click", () => {
+            clearInterval(photoAutoplay);
+            previousPhoto();
+            photoAutoplay = setInterval(nextPhoto, 3000);
+        });
+
+        let photoAutoplay = setInterval(nextPhoto, 3000);
+    }
+
+    // Initialize each photography slideshow independently
+    const photographySlideshows = document.querySelectorAll(".photography-slideshow");
+    photographySlideshows.forEach(slideshowContainer => initializePhotographySlideshow(slideshowContainer));
+
+    // Open Portfolio PDF in Modal
     function openPortfolio(pdfFile) {
         document.getElementById("portfolioFrame").src = pdfFile;
         document.getElementById("portfolioModal").style.display = "flex";
-        document.body.classList.add("modal-open"); // Add class to body
+        document.body.classList.add("modal-open");
     }
 
     function closePortfolio() {
         document.getElementById("portfolioModal").style.display = "none";
         document.getElementById("portfolioFrame").src = "";
-        document.body.classList.remove("modal-open"); // Remove class from body
+        document.body.classList.remove("modal-open");
     }
 
     // Video Modal Controls
     function openVideoModal() {
         document.getElementById("videoModal").style.display = "flex";
         const video = document.getElementById("modalVideo");
-        video.play(); // Start playing the video when the modal opens
+        video.play();
     }
 
     function closeVideoModal() {
         const video = document.getElementById("modalVideo");
-        video.pause(); // Pause the video
-        video.currentTime = 0; // Reset playback to the beginning
+        video.pause();
+        video.currentTime = 0;
         document.getElementById("videoModal").style.display = "none";
     }
 

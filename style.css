@@ -13,7 +13,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #333;
+    background-color: #013220;
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -51,13 +51,13 @@ section {
 }
 
 #intro {
-    background: #f0f0f0;
+    background: #aac8b9;
     padding: 100px 20px;
 }
 
 #intro h1 {
     font-size: 2.5em;
-    color: #0077cc;
+    color: #013220;
     margin: 0;
 }
 
@@ -167,6 +167,11 @@ section {
 .slides-wrapper {
     display: flex; /* Align images in a row */
     transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+}
+
+
+.photography-slideshow .slides-wrapper {
+    will-change: transform; /* Optimize for smoother transitions */
 }
 
 /* Individual Slide Image */
@@ -308,7 +313,7 @@ section {
 .art-projects-section {
     text-align: center;
     padding: 40px 20px;
-    background-color: #f0f8f5;
+    background-color: #c2ded0;
 }
 
 .project-cards-container {
@@ -385,3 +390,95 @@ section {
 
 
 
+
+
+/* Photography Section Layout */
+.photography-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Description Styling */
+.photography-description {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+}
+
+.photography-description h3 {
+    font-size: 1.8em;
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.photography-description p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Slideshow Container for Photography */
+.photography-slideshow {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Adjust width as needed */
+    height: 300px; /* Set height for the gallery */
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slides Wrapper */
+.photography-slideshow .slides-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Slideshow Container */
+.photography-slideshow {
+    max-width: 100%; /* Allow the container to take full width */
+    height: 80vh; /* Flexible height based on viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: white; /* Background color for padding on sides */
+}
+
+/* Slideshow Image */
+.slideshow-image {
+    max-width: 100%; /* Scale to fit container width */
+    max-height: 100%; /* Scale to fit container height */
+    object-fit: contain; /* Preserve aspect ratio without cropping */
+    object-position: center; /* Center the image within the container */
+}
+
+
+/* Navigation Buttons */
+.photography-slideshow .prev,
+.photography-slideshow .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.photography-slideshow .prev {
+    left: 10px;
+}
+
+.photography-slideshow .next {
+    right: 10px;
+}
