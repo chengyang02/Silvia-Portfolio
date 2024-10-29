@@ -153,80 +153,124 @@
                 </div>
             </div>
 
-            <!-- Storytelling Project -->
-            <div class="project-card">
-                <div class="slideshow-container">
-                    <button class="prev" onclick="previousSlide()">❮</button>
-                    <button class="next" onclick="nextSlide()">❯</button>
-                    <div class="slides-wrapper">
-                        <img src="art%20projects/storytelling/1.heic" class="slideshow-image">
-                        <img src="art%20projects/storytelling/2.heic" class="slideshow-image">
-                        <img src="art%20projects/storytelling/3.heic" class="slideshow-image">
-                    </div>
-                </div>
-                <h5 class="project-title">Storytelling</h5>
-                <p class="project-description">Storytelling</p>
-                <button onclick="openPortfolio('art%20projects/storytelling/Silvia%20Cai.pdf')" class="view-portfolio-button">View Full Version</button>
-            </div>
-
         </div>
 
     </section>
 
 
     <!-- Photography Section -->
-    <section id="photography">
+    <section id="photography" class="photography-section">
     <h2>Photography</h2>
-
-    <!-- if photos edited -->
-    <div class="photography-content">
-        <!-- Left Side: Description -->
-        <div class="photography-description">
-            <h3>Photography Project</h3>
-            <p>This project showcases a series of photographs that capture various aspects of life and nature. Each image represents a unique moment frozen in time, reflecting both simplicity and depth.</p>
+    <div class="photography-grid">
+        <!-- Each project folder -->
+        <div class="photography-project" onclick="openPhotographySlideshow('cat')">
+            <img src="pic/cat/IMG_4289.jpeg" alt="cat Thumbnail">
+            <button>cat</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('P2T 2023')">
+            <img src="pic/P2T 2023/IMG_7835.JPG" alt="P2T 2023 Thumbnail">
+            <button>P2T 2023</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('APAC table tennis')">
+            <img src="pic/APAC table tennis/DV9A0391.JPG" alt="APAC table tennis Thumbnail">
+            <button>APAC table tennis</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('dog rescue')">
+            <img src="pic/dog rescue/IMG_8150.JPG" alt="dog rescue Thumbnail">
+            <button>dog rescue</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('APAC band 2024')">
+            <img src="pic/APAC band 2024/IMG_2950.JPG" alt="APAC band 2024 Thumbnail">
+            <button>APAC band 2024</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('ningxia')">
+            <img src="pic/ningxia/IMG_5355.jpeg" alt="ningxia Thumbnail">
+            <button>ningxia</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('honk (musical)')">
+            <img src="pic/honk (musical)/DV9A0921 (1).JPG" alt="honk (musical) Thumbnail">
+            <button>honk (musical)</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('Passion ')">
+            <img src="pic/Passion /DV9A2423.JPG" alt="Passion  Thumbnail">
+            <button>Passion </button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('season one opening 2024')">
+            <img src="pic/season one opening 2024/DV9A3704.JPG" alt="season one opening 2024 Thumbnail">
+            <button>season one opening 2024</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('Boston')">
+            <img src="pic/Boston/IMG_3354.jpeg" alt="Boston Thumbnail">
+            <button>Boston</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('international fair 2023')">
+            <img src="pic/international fair 2023/IMG_2941.JPG" alt="international fair 2023 Thumbnail">
+            <button>international fair 2023</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('Shanghai aquarium')">
+            <img src="pic/Shanghai aquarium/DV9A2782.JPG" alt="Shanghai aquarium Thumbnail">
+            <button>Shanghai aquarium</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('international fair 2024')">
+            <img src="pic/international fair 2024/DV9A3486.JPG" alt="international fair 2024 Thumbnail">
+            <button>international fair 2024</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('street')">
+            <img src="pic/street/DSCF2343.JPG" alt="street Thumbnail">
+            <button>street</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('turkey bowl')">
+            <img src="pic/turkey bowl/IMG_4473.JPG" alt="turkey bowl Thumbnail">
+            <button>turkey bowl</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('APAC volleyball')">
+            <img src="pic/APAC volleyball/DV9A4882.JPG" alt="APAC volleyball Thumbnail">
+            <button>APAC volleyball</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('APAC robotics')">
+            <img src="pic/APAC robotics/DV9A0180.JPG" alt="APAC robotics Thumbnail">
+            <button>APAC robotics</button>
+        </div>
+        
+        <div class="photography-project" onclick="openPhotographySlideshow('APAC season 1 kick- off')">
+            <img src="pic/APAC season 1 kick- off/DV9A2929.jpg" alt="APAC season 1 kick- off Thumbnail">
+            <button>APAC season 1 kick- off</button>
         </div>
 
-        <!-- Right Side: Slideshow -->
-        <div class="slideshow-container photography-slideshow">
-            <button class="prev" onclick="previousPhoto()">❮</button>
-            <button class="next" onclick="nextPhoto()">❯</button>
-            <div class="slides-wrapper">
-                <img src="if%20photos%20edited/DV9A3569.jpg" class="slideshow-image">
-                <img src="if%20photos%20edited/DV9A3555.jpg" class="slideshow-image">
-                <img src="if%20photos%20edited/DV9A3421.jpg" class="slideshow-image">
-                <img src="if%20photos%20edited/DV9A3434.JPG" class="slideshow-image">
-                
-            </div>
-        </div>
     </div>
-
-
-
-    <!-- 2024season1 opening edited -->
-    <div class="photography-content">
-        <!-- Left Side: Description -->
-        <div class="photography-description">
-            <h3>Photography Project</h3>
-            <p>This project showcases a series of photographs that capture various aspects of life and nature. Each image represents a unique moment frozen in time, reflecting both simplicity and depth.</p>
-        </div>
-
-        <!-- Right Side: Slideshow -->
-        <div class="slideshow-container photography-slideshow">
-            <button class="prev" onclick="previousPhoto()">❮</button>
-            <button class="next" onclick="nextPhoto()">❯</button>
-            <div class="slides-wrapper">
-                <img src="2024season1%20opening/DV9A3780.jpg" class="slideshow-image">
-                <img src="2024season1%20opening/DV9A3958.JPG" class="slideshow-image">
-                <img src="2024season1%20opening/DV9A4004.JPG" class="slideshow-image">
-                <img src="2024season1%20opening/DV9A3805.jpg" class="slideshow-image">
-                <img src="2024season1%20opening/DV9A3756.jpg" class="slideshow-image">
-                <img src="2024season1%20opening/DV9A3959.JPG" class="slideshow-image">
-                
-            </div>
-        </div>
-    </div>
-
     </section>
+
+    <!-- Photography Slideshow Modal -->
+    <div id="photographyModal" class="photography-modal">
+        <div class="photography-modal-content">
+            <span class="photography-close" onclick="closePhotographySlideshow()">&times;</span>
+            <div class="photography-slides-container">
+                <button class="photography-prev" onclick="changePhotographySlide(-1)">&#10094;</button>
+                <img id="photographySlideshowImage" src="" alt="Slideshow Image">
+                <button class="photography-next" onclick="changePhotographySlide(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 
 

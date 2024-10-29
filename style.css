@@ -392,93 +392,110 @@ section {
 
 
 
-/* Photography Section Layout */
-.photography-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+/* Photography Section Specific Styles */
+.photography-section {
+    padding: 40px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.photography-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Photography Grid */
+.photography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
     padding: 20px;
 }
 
-/* Description Styling */
-.photography-description {
-    flex: 1;
-    padding: 10px;
-    text-align: left;
-}
-
-.photography-description h3 {
-    font-size: 1.8em;
-    color: #0077cc;
-    margin-bottom: 10px;
-}
-
-.photography-description p {
-    font-size: 1em;
-    color: #555;
-}
-
-/* Slideshow Container for Photography */
-.photography-slideshow {
-    flex: 1;
+.photography-project {
     position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.photography-project img {
     width: 100%;
-    max-width: 500px; /* Adjust width as needed */
-    height: 300px; /* Set height for the gallery */
-    overflow: hidden;
+    height: auto;
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    object-fit: cover;
 }
 
-/* Slides Wrapper */
-.photography-slideshow .slides-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.photography-project button {
+    display: block;
     width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 1em;
+    color: white;
+    background-color: #0077cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Slideshow Container */
-.photography-slideshow {
-    max-width: 100%; /* Allow the container to take full width */
-    height: 80vh; /* Flexible height based on viewport */
-    display: flex;
+.photography-project button:hover {
+    background-color: #ff6347;
+}
+
+/* Modal Slideshow Styling */
+.photography-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    background-color: white; /* Background color for padding on sides */
+    z-index: 1000;
 }
 
-/* Slideshow Image */
-.slideshow-image {
-    max-width: 100%; /* Scale to fit container width */
-    max-height: 100%; /* Scale to fit container height */
-    object-fit: contain; /* Preserve aspect ratio without cropping */
-    object-position: center; /* Center the image within the container */
+.photography-modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
 }
 
+.photography-slides-container {
+    display: flex;
+    align-items: center;
+}
 
-/* Navigation Buttons */
-.photography-slideshow .prev,
-.photography-slideshow .next {
+.photography-slides-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.photography-prev, .photography-next {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
     color: white;
+    font-size: 24px;
     background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 5px;
+    z-index: 10;
+}
+
+.photography-prev { left: 5px; }
+.photography-next { right: 5px; }
+
+.photography-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
     cursor: pointer;
-    z-index: 1;
-}
-
-.photography-slideshow .prev {
-    left: 10px;
-}
-
-.photography-slideshow .next {
-    right: 10px;
+    color: white;
 }
